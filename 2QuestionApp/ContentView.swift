@@ -9,112 +9,93 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var response = ""
-    @State private var response2 = ""
-    @State private var response3 = ""
+    @State private var response1 = ""
     
     var body: some View {
         
+            NavigationStack {
+                VStack
+                {
+                    Text("1. First environment question")
+                        .font(.title3)
+                        .fontWeight(/*@START_MENU_TOKEN@*/.medium/*@END_MENU_TOKEN@*/)
+                    
+                    NavigationLink(destination:questionPgView())
+                    {
+                        Text("A. Option 1.")
+                    }
+                    
+                    Button("B. Right Answer")
+                    {
+                        response1 = "Correct!"
+                    }
+                    
+                    NavigationLink(destination: questionPgView())
+                    {
+                        Text("A. Option 3")
+                    }
+                    
+                }
+                Text(response1)
+            }//end of nav stack
+                
+
+            NavigationStack {
+                VStack
+                {
+                    Text("2. Second environment question")
+                        .font(.title3)
+                        .fontWeight(.medium)
+                    
+                    Button("A. Right Answer")
+                    {
+                        response1 = "Correct!"
+                    }
+                    
+                    NavigationLink(destination: exp2())
+                        {
+                            Text("B. Option 2.")
+                        }
+                    
+                    NavigationLink(destination: exp2())
+                    {
+                        Text("C. Option 3")
+                    }
+                    
+                }
+                Text(response1)
+            }//end of nav stack
+            
+            NavigationStack {
+                VStack
+                {
+                    Text("3. Third environment question")
+                        .font(.title3)
+                        .fontWeight(.medium)
+                    
+                    NavigationLink(destination: exp3())
+                        {
+                            Text("A. Option 1.")
+                        }
+                    
+                    NavigationLink(destination: exp3())
+                    {
+                        Text("B. Option 2")
+                    }
+                    
+                    Button("C. Right Answer")
+                    {
+                        response1 = "Correct!"
+                    }
+                    
+                }
+                Text(response1)
+            }//end of nav stack
+            
+        }
+        
        
-            VStack
-            {
-                Text("1. Environment question?")
-                    .font(.title3)
-                
-                Button("A. number 1")
-                {
-                    response = "Explanation why this is wrong. or the correct answer"
-                }
-                
-                Button("B. Right Answer")
-                {
-                    response = "Correct! "
-                }
-                
-                Button("C. number 3")
-                {
-                    response = "Explanation why this is wrong. or the correct answer"
-                }
-                
-                Text(response)
-                
-            }
-            
-        NavigationStack {
-            VStack
-            {
-                Text("2. Environment question?").font(.title3)
-                
-                Button("A. number 1")
-                {
-                    response2 = "Explanation why this is wrong. or the correct answer"
-                }
-                
-                Button("B. Right Answer")
-                {
-                    response2 = "Correct! "
-                }
-                
-                Button("C. number 3")
-                {
-                    response2 = "Explanation why this is wrong. or the correct answer"
-                }
-                
-                Text(response2)
-                
-            }
-        
-            NavigationLink(destination: questionPgView())
-            {
-                Text("Next question of page where it shows you your score.")
-            }
         }
-        
-            
-            // 3Question
-            
-        NavigationStack {
-            VStack
-            {
-                Text("3. Environment question?").font(.title3)
-                
-                Button("A. Right Answer")
-                {
-                    response3 = "Correct"
-                }
-                
-                Button("B. Number 2")
-                {
-                    response3 = "Explanation why this is wrong. or the correct answer"
-                }
-                
-                Button("C. number 3")
-                {
-                    response3 = "Explanation why this is wrong. or the correct answer"
-                }
-                
-                Text(response3)
-                
-            }
-            
-      
-                NavigationLink(destination: questionPgView())
-                {
-                    Text("Next question of page where it shows you your score.")
-                }
-            }
-        
-            
-        }
-    }
-        
-    
-            
-        
-        
-
-        
-
 
 #Preview {
     ContentView()

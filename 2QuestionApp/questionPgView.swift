@@ -9,7 +9,7 @@ import SwiftUI
 
 struct questionPgView: View {
     var body: some View {
-        Text("Next Question or shows you how many you got right.")
+        Text("This is the explanation for question 1.")
     }
 }
 
